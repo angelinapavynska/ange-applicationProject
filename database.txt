@@ -1,0 +1,28 @@
+ClientsBooking
+- id
+- first_name (string)
+- last_name (string)
+- addres (string)
+- password (string)
+- Children (int)
+-how many nights (int)
+-room#
+-total guests (int)
+-arrival date(date)
+-departure_date(date)
+
+Room
+- room# (int)
+- bed# (int)
+
+
+Rooms to clean in particular date
+-room#
+-departure_date
+-id_personel
+
+Cleaning Personal
+- id_personal (int)
+- first_name (string)
+- last_name (string)
+-floor responsible (int)
