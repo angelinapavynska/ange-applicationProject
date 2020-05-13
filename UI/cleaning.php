@@ -1,25 +1,32 @@
-
 <!doctype html>
 
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Hotel</title>
+    <title>Cleaning Personal</title>
     <link rel="stylesheet" href="style.css">
+    <?php
+        $host = "localhost";
+        $user = "root";
+        $pwd = "root";
+        $db = "ApplicationProject";
+
+        $conn = mysqli_connect($host, $user, $pwd, $db) or die("unable to connect"); 
+        
+        ?>
 </head>
 
 <body>
-    <h1>Hotel</h1>
+    <h1>Cleaning</h1>
 
     <table style="width:100%;">
       <tr>
-          <th>Booking ID</th>
-          <th>Room#</th>
-          <th>Arrival Date</th>
+          <th>Id Cleaning Personal </th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Room Responsible</th>
           <th>Departure Date</th>
-          <th>Id Cleaning Personal</th>
-          <th>Tot. Guests</th>
       </tr>
       <tr>
           <td></td>
@@ -27,10 +34,8 @@
           <td></td>
           <td></td>
           <td></td>
-          <td></td>
       </tr>
       <tr>
-          <td></td>
         <td></td>
         <td></td>
         <td></td>
@@ -38,7 +43,6 @@
         <td></td>
     </tr>  
     <tr>
-        <td></td>
         <td></td>
         <td></td>
         <td></td>

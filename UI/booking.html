@@ -13,33 +13,42 @@
     <div class="container-fluid px-2">
     <h1>Booking of a Room</h1>
 
-
+<form action="hotel.php" method="post">
     <table style="width: 100%; margin-bottom: 10px">
         <tr>
             <td>First Name</td>
-            <td><input type="text" style="width: 100%"></td>
+            <td><input type="text" style="width: 100%" name="first_name"></td>
             <td>Last Name</td>
-            <td><input type="text" style="width: 100%"></td>
+            <td><input type="text" style="width: 100%" name="last_name"></td>
         </tr>
         <tr>
             <td >Address</td>
-            <td colspan="3"><input type="text" style="width: 100%"></td>
+            <td colspan="3"><input type="text" style="width: 100%" name="address"></td>
         </tr>
         <tr>
             <td>Guests(>18)</td>
-            <td><input type="text" style="width: 100%"></td>
+            <td><input type="text" style="width: 100%" name="guests"></td>
             <td>Children(<18) </td>
-            <td><input type="text" style="width: 100%"></td>
+            <td><input type="text" style="width: 100%" name="children"></td>
         </tr>
         <tr>
             <td>Arrival Date</td>
-            <td><input type="text" style="width: 100%"></td>
+            <td><label for="birthday">Birthday:</label><input type="date" id="birthday" name="birthday"></td>
             <td>Departure Date </td>
-            <td><input type="text" style="width: 100%"></td>
+            <td><input type="date" style="width: 100%" name="departureDate" min="2020-05-13"></td>
         </tr>
     
     </table>
-    <button onclick="document.location = '#' " class="btn btn-outline-primary btn-lg" type="submit">Submit</button>
+    <button  class="btn btn-outline-primary btn-lg" value="submit" input type="submit">Submit</button>
+    <p><a href="deleteBooking.html"> Want to cancel a Booking? </a> </p>
+</form>
+
+<form>
+    <label for="datemax">Enter a date before 1980-01-01:</label>
+    <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
+    <label for="datemin">Enter a date after 2000-01-01:</label>
+    <input type="date" id="datemin" name="datemin" min="2000-01-02">
+  </form>
 </div>
 </body>
 
