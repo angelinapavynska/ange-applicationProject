@@ -33,22 +33,16 @@
         </tr>
         <tr>
             <td>Arrival Date</td>
-            <td><label for="birthday">Birthday:</label><input type="date" id="birthday" name="birthday"></td>
+            <td><input type="date" style="width: 100%" name="arrivalDate" min="2020-05-12" placeholder="yyyy/mm/dd"></td>
             <td>Departure Date </td>
-            <td><input type="date" style="width: 100%" name="departureDate" min="2020-05-13"></td>
+            <td><input type="date" style="width: 100%" name="departureDate" min="2020-05-13" placeholder="yyyy/mm/dd"></td>
         </tr>
     
     </table>
     <button  class="btn btn-outline-primary btn-lg" value="submit" input type="submit">Submit</button>
     <p><a href="deleteBooking.html"> Want to cancel a Booking? </a> </p>
+    <p><a href="updateBooking.php"> Want to update a Booking? </a> </p>
 </form>
-
-<form>
-    <label for="datemax">Enter a date before 1980-01-01:</label>
-    <input type="date" id="datemax" name="datemax" max="1979-12-31"><br><br>
-    <label for="datemin">Enter a date after 2000-01-01:</label>
-    <input type="date" id="datemin" name="datemin" min="2000-01-02">
-  </form>
 </div>
 </body>
 
