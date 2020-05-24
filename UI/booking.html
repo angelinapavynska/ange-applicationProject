@@ -6,44 +6,54 @@
     <meta charset="utf-8">
     <title>Clients</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
     <div class="container-fluid px-2">
-    <h1>Booking of a Room</h1>
+        <h1>Booking of a Room</h1>
 
-<form action="hotel.php" method="post">
-    <table style="width: 100%; margin-bottom: 10px">
-        <tr>
-            <td>First Name</td>
-            <td><input type="text" style="width: 100%" name="first_name"></td>
-            <td>Last Name</td>
-            <td><input type="text" style="width: 100%" name="last_name"></td>
-        </tr>
-        <tr>
-            <td >Address</td>
-            <td colspan="3"><input type="text" style="width: 100%" name="address"></td>
-        </tr>
-        <tr>
-            <td>Guests(>18)</td>
-            <td><input type="text" style="width: 100%" name="guests"></td>
-            <td>Children(<18) </td>
-            <td><input type="text" style="width: 100%" name="children"></td>
-        </tr>
-        <tr>
-            <td>Arrival Date</td>
-            <td><input type="date" style="width: 100%" name="arrivalDate" min="2020-05-12" placeholder="yyyy/mm/dd"></td>
-            <td>Departure Date </td>
-            <td><input type="date" style="width: 100%" name="departureDate" min="2020-05-13" placeholder="yyyy/mm/dd"></td>
-        </tr>
-    
-    </table>
-    <button  class="btn btn-outline-primary btn-lg" value="submit" input type="submit">Submit</button>
-    <p><a href="deleteBooking.html"> Want to cancel a Booking? </a> </p>
-    <p><a href="updateBooking.php"> Want to update a Booking? </a> </p>
-</form>
-</div>
+        <form action="hotel.php" method="post">
+            <table style="width: 100%; margin-bottom: 10px">
+                <tr>
+                    <td>First Name</td>
+                    <td><input type="text" style="width: 100%" name="first_name" required></td>
+                    <td>Last Name</td>
+                    <td><input type="text" style="width: 100%" name="last_name" required></td>
+                </tr>
+                <tr>
+                    <td>Email</td>
+                    <td colspan="3"><input type="email" style="width: 100%" name="email" required></td>
+                </tr>
+                <tr>
+                    <td>Guests(>18)</td>
+                    <td><input type="text" style="width: 100%" name="guests" required></td>
+                    <td>Children(<18) </td>
+                    <td><input type="text" style="width: 100%" name="children" required value="0"></td>
+                </tr>
+                <tr>
+                    <td>Arrival Date</td>
+                    <td><input type="date" style="width: 100%" name="arrivalDate" min="2020-05-12"
+                            placeholder="yyyy/mm/dd" required></td>
+                    <td>Departure Date </td>
+                    <td><input type="date" style="width: 100%" name="departureDate" min="2020-05-13"
+                            placeholder="yyyy/mm/dd" required></td>
+                </tr>
+
+            </table>
+            <h6 style="color: green;">Please fill in all the fields. You will receive your personal id and confirmation
+                of the bookig by email. </h6>
+
+            <button class="btn btn-outline-primary btn-lg" value="submit" input type="submit">Submit</button>
+
+            <br>
+            <br>
+            <a href="deleteBooking.html"> Want to cancel a Booking? </a>
+            <br>
+            <a href="updateBooking.php"> Want to update a Booking? </a>
+        </form>
+    </div>
 </body>
 
 </html>
