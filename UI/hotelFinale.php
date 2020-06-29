@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <title>HotelSummary</title>
-    <link rel="stylesheet" href="style.css">
+   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 
@@ -29,32 +29,49 @@
     $query1 = "UPDATE Rooms SET Rooms.Available=TRUE WHERE Rooms.RoomNumber NOT IN (SELECT Booking.RoomNumber From Booking) ";
 
     if (mysqli_query($conn, $query1)) {
-        echo "Records added successfully.";
+        
     } else {
-        echo "ERROR: Could not able to execute $quety1. " . mysqli_error($conn);
+        
     }
     ?>
     
+
+<style> 
+
+body {
+    font-family: "DejaVu Sans Mono", monospace;
+    padding-left: 20px;
+    padding-top: 10px;
+    
+}
+
+</style>
+
 </head>
 
 
 <body>
     <h1>Hotel Summary</h1>
-
+<p> 
+    <a href="list.php" style="padding-right: 20px;"> List of Rooms </a>
+    <a href="cleaning.php"> List of Cleaning Personal </a>
+</p>
     <div class="container-fluid px-4">
-        <table style="width:100%;">
+        <table style="width:100%;" class="table ">
+        <thead class="thead-dark">
             <tr>
-                <th>Booking ID</th>
-                <th>Client ID</th>
-                <th>Name</th>
-                <th>Last Name</th>
-                <th>Arrival Date</th>
-                <th>Departure Date</th>
-                <th>Tot. Guests</th>
-                <th>Room</th>
-                <th> Cleaning Id </th>
+                <th scope="col"> Booking ID</th>
+                <th scope="col">Client ID</th>
+                <th scope="col">Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Arrival Date</th>
+                <th scope="col">Departure Date</th>
+                <th scope="col">Tot. Guests</th>
+                <th scope="col">Room</th>
+                <th scope="col"> Cleaning Id </th>
             </tr>
-
+        </thead>
+        <tbody>
             <?php
 
             while ($row = mysqli_fetch_array($result)) {
@@ -116,10 +133,17 @@
                     <td></td>
                     <td></td>
                 </tr>
+        </tbody>
         </table>
         <br>
         <a href="hotel.php"> Back </a>
     </div>
+
+
+
+
+
+    
 </body>
 
 </html>

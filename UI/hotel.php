@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <title>Hotel</title>
-    <link rel="stylesheet" href="style.css">
+   
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
 
@@ -30,9 +30,9 @@
     VALUES (NULL ,'$first_name', '$last_name', '$email', '$guests', '$arrivalDate', '$departureDate', '$children') ";
 
     if (mysqli_query($conn, $sql)) {
-        echo "Records added successfully.";
+       
     } else {
-        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+        
     }
 
 
@@ -42,17 +42,17 @@
     $sql = " DELETE FROM Clients WHERE id='$idDelete'";
 
     if (mysqli_query($conn, $sql)) {
-        echo "Records added successfully.";
+        
     } else {
-        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+        
     }
 
     $sql = " DELETE FROM Booking WHERE Client_id='$idDelete'";
 
     if (mysqli_query($conn, $sql)) {
-        echo "Records added successfully.";
+        
     } else {
-        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+        
     }
 
     if (isset($_GET['delBooking'])) {
@@ -67,9 +67,9 @@ WHERE (Clients.Guests+Clients.Children)<=Rooms.BedNumber AND Rooms.Available = T
     // $result = mysqli_query($conn, $query);
 
     if (mysqli_query($conn, $sql)) {
-        echo "Records added successfully.";
+        
     } else {
-        echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
+        
     }
 
     $query = "SELECT * FROM Booking ";
@@ -78,9 +78,9 @@ WHERE (Clients.Guests+Clients.Children)<=Rooms.BedNumber AND Rooms.Available = T
     $query1 = "UPDATE Rooms SET Rooms.Available=FALSE WHERE Rooms.RoomNumber IN (SELECT Booking.RoomNumber From Booking) ";
 
     if (mysqli_query($conn, $query1)) {
-        echo "Records added successfully.";
+        
     } else {
-        echo "ERROR: Could not able to execute $quety1. " . mysqli_error($conn);
+        
     }
 
 
@@ -88,9 +88,9 @@ WHERE (Clients.Guests+Clients.Children)<=Rooms.BedNumber AND Rooms.Available = T
     $query2 = "SELECT * FROM Clients WHERE Clients.id NOT IN (SELECT Booking.Client_id FROM Booking)";
     $result2 = mysqli_query($conn, $query2);
     if (mysqli_query($conn, $query2)) {
-        echo "Records added successfully.";
+        
     } else {
-        echo "ERROR: Could not able to execute $quety2. " . mysqli_error($conn);
+        
     }
 
 
@@ -101,6 +101,15 @@ WHERE (Clients.Guests+Clients.Children)<=Rooms.BedNumber AND Rooms.Available = T
         header('location: hotel.php');
     }
     ?>
+
+    <style>
+        body {
+    font-family: "DejaVu Sans Mono", monospace;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+    </style>
 </head>
 
 
@@ -108,7 +117,8 @@ WHERE (Clients.Guests+Clients.Children)<=Rooms.BedNumber AND Rooms.Available = T
     <h1>Hotel</h1>
 
     <div class="container-fluid px-4">
-        <table style="width:100%;">
+        <table style="width:100%;" class="table">
+        <thead class="thead-dark">
             <tr>
                 <th>Booking ID</th>
                 <th>Client ID</th>
@@ -119,7 +129,9 @@ WHERE (Clients.Guests+Clients.Children)<=Rooms.BedNumber AND Rooms.Available = T
                 <th>Tot. Guests</th>
                 <th>Room</th>
                 <th> Delete </th>
+
             </tr>
+        </thead>
 
             <?php
 
@@ -164,9 +176,11 @@ WHERE (Clients.Guests+Clients.Children)<=Rooms.BedNumber AND Rooms.Available = T
         <a href="hotelFinale.php"> Save and View Complete Information</a>
         <br>
 
-
+<br>
+<br>
         <h6 style="color: red;"> Contant following clients. Inform them about the cancellation of their Booking. </h6>
-        <table style="width:100%;">
+        <table style="width:100%;" class="table">
+        <thead class="thead-dark">
             <tr>
                 <th>Client ID</th>
                 <th>Name</th>
@@ -178,7 +192,7 @@ WHERE (Clients.Guests+Clients.Children)<=Rooms.BedNumber AND Rooms.Available = T
                 <th>Children</th>
                 <th>Delete</th>
             </tr>
-
+        </thead>
             <?php
 
             while ($row = mysqli_fetch_array($result2)) {

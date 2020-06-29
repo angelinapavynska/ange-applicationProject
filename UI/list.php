@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8">
     <title>List of rooms</title>
-    <link rel="stylesheet" href="style.css">
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <?php
@@ -60,11 +60,26 @@
 
 
     ?>
+
+<style> 
+
+body {
+    font-family: "DejaVu Sans Mono", monospace;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+
+</style>
 </head>
 
 <body>
     <h1>Rooms</h1>
-    <div class="container-fluid px-2">
+   
+
+    <div class="container-fluid px-4">
+       
+        <a href="hotelFinale.php"> View Complete Information</a>
 
         <form method="post" action="list.php">
             <input type="text" name="RoomNumber" value="<?php echo $RoomNumber; ?>">
@@ -72,14 +87,15 @@
             <input type="text" name="Available" value="<?php echo $Available; ?>">
 
             <?php if ($update == true) : ?>
-                <button class="btn" type="submit" name="Edit" style="background: #556B2F;">update</button>
+                <button class="btn" type="submit" name="Edit" style="background: #556B2F; color:white;">update</button>
             <?php else : ?>
                 <button class="btn" type="submit" name="save">Save</button>
             <?php endif ?>
 
         </form>
         <br>
-        <table style="width: 100%; margin-bottom: 10px">
+        <table style="width: 100%; margin-bottom: 10px" class="table">
+        <thead class="thead-dark">
             <tr>
                 <th>Room#</th>
                 <th>Bed#</th>
@@ -87,6 +103,7 @@
                 <th>
                     </td>
             </tr>
+        </thead>
             <tr>
                 <?php
 

@@ -5,22 +5,31 @@
 <head>
     <meta charset="utf-8">
     <title>Update YourBooking</title>
-    <link rel="stylesheet" href="style.css">
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
     <?php
 
-
-
     ?>
+
+    <style>
+    body {
+    font-family: "DejaVu Sans Mono", monospace;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+}
+    
+
+</style>
 </head>
 
 <body>
     <div class="container-fluid px-2">
         <h1>Update your Booking</h1>
 
-        <form action="hotel.php" method="post">
-            <table style="width: 100%; margin-bottom: 10px">
+        <form action="updateBooking.php" method="post">
+            <table style="width: 100%; margin-bottom: 10px" class="table table-bordered">
                 <tr>
                     <td>Your Assigned Id</td>
                     <td><input type="text" style="width: 100%" name="idUpdate" required></td>
@@ -41,9 +50,9 @@
                 </tr>
                 <tr>
                     <td>Arrival Date</td>
-                    <td><input type="date" style="width: 100%" name="arrivalDateUpdate" min="2020-05-12" placeholder="yyyy-mm-dd" required></td>
+                    <td><input type="date" style="width: 100%" name="arrivalDateUpdate" min="2020-05-12" placeholder="yyyy/mm/dd" required></td>
                     <td>Departure Date </td>
-                    <td><input type="date" style="width: 100%" name="departureDateUpdate" min="2020-05-13" placeholder="yyyy-mm-dd" required></td>
+                    <td><input type="date" style="width: 100%" name="departureDateUpdate" min="2020-05-13" placeholder="yyyy/mm/dd" required></td>
                 </tr>
 
             </table>

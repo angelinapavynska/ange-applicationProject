@@ -4,18 +4,52 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Clients</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Booking</title>
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+<style> 
+h1 {
+    margin-top: 30px;
+    
+}
+
+body {
+    font-family: "DejaVu Sans Mono", monospace;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-right: 20px;
+
+    
+    
+}
+
+.image {
+    background-image: url(78809294.jpg );
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    
+}
+.btn, td {
+    background-color: azure;
+}
+</style>
 </head>
 
-<body>
+<body class="image"> 
     <div class="container-fluid px-2">
-        <h1>Booking of a Room</h1>
+        <h1> Book a Room!</h1>
 
         <form action="hotel.php" method="post">
-            <table style="width: 100%; margin-bottom: 10px">
+            <table style="width: 100%; margin-bottom: 10px" class="table table-bordered">
                 <tr>
                     <td>First Name</td>
                     <td><input type="text" style="width: 100%" name="first_name" required></td>
@@ -42,16 +76,18 @@
                 </tr>
 
             </table>
-            <h6 style="color: green;">Please fill in all the fields. You will receive your personal id and confirmation
+            <h6 style="color: green; display:inline-block;  background-color: azure; padding-left: 5px; border-radius: 10px;">Please fill in all the fields. You will receive your personal id and confirmation
                 of the bookig by email. </h6>
-
+<br>
             <button class="btn btn-outline-primary btn-lg" value="submit" input type="submit">Submit</button>
 
             <br>
             <br>
-            <a href="deleteBooking.html"> Want to cancel a Booking? </a>
+            <div >
+            <a href="deleteBooking.html" style="background-color: azure; padding-left: 5px; border-radius: 10px;"> Want to cancel a Booking? </a>
             <br>
-            <a href="updateBooking.php"> Want to update a Booking? </a>
+            <a href="updateBooking.php" style="background-color: azure; padding-left: 5px; border-radius: 10px;"> Want to update a Booking? </a>
+            </div>
         </form>
     </div>
 </body>
